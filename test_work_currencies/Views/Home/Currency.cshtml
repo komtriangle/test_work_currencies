@@ -1,0 +1,17 @@
+﻿@model test_work_currencies.Models.Currency
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+   <span>Название: @Model.Name</span>
+    <br />
+    <span>Номинал: @Model.Nominal</span>
+    <br />
+    <span>Значение: @Model.Value</span>
+    <br />
+    <span>Предыдущее значение: @Model.Previous</span>
+    <br />
+    <span>Код: @Model.NumCode</span>
+    <br />
+</div>
