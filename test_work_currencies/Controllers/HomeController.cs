@@ -36,19 +36,12 @@ namespace test_work_currencies.Controllers
 
         public ActionResult currency(string ID)
         {
-            var Currencies = _repository.GetCurrency(ID);
-            return View(Currencies);
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var Currency = _repository.GetCurrency(ID);
+            if(Currency == null)
+            {
+                return View("ErrorCurrency");
+            }
+            return View(Currency);
         }
     }
 }
